@@ -1,0 +1,11 @@
+#ignore virtual environment
+venv/
+#ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+#ignore database files  
+db.sqlite3
+
+#ignore environment variables
+.env
