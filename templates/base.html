@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nameless Design Co.{% endblock %}</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Main/Global CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="flex flex-col min-h-screen">
+    {% include '_header.html' %} {# Include the header partial here #}
+
+    <main class="flex-grow">
+        {% block content %}
+        {# Default content or a placeholder if a child template doesn't define this block #}
+        {% endblock %}
+    </main>
+
+    {% include '_footer.html' %} {# Include the footer partial here #}
+
+    <!-- Main/Global JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Page-specific JavaScript -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

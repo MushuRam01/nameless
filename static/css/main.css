@@ -1,0 +1,58 @@
+/* Custom styles for the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #c9c1c1; /* Main background color from first image (dark grey/black) */
+    color: #FFFFFF; /* White text for contrast on dark background */
+}
+.container {
+    max-width: 1200px;
+}
+.header-bg {
+    background-color: #522f16; /* Matching footer and header color */
+}
+.nav-link {
+    transition: color 0.3s ease;
+    color: #E0E0E0; /* Ensure nav links are visible on dark header */
+}
+.nav-link:hover {
+    color: #D4B89F; /* Lighter beige/brown on hover */
+}
+.btn-primary {
+    background-color: #A0522D; /* Sienna/Terracotta */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #8B5A2B; /* Darker Sienna */
+    transform: translateY(-2px);
+}
+.card {
+    background-color: #c9c1c1; /* Darker grey for cards on dark background */
+    color: #F0F0F0; /* Light text for cards */
+    border-radius: 1rem; /* Rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow-lg */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Shadow-xl */
+}
+/* New class for secondary section background */
+.section-bg-light {
+    background-color: #838383; /* Secondary background color from second image (slightly lighter grey) */
+    color: #F0F0F0; /* Light text for these sections */
+}
+/* New class for dark footer background */
+.footer-dark-bg {
+    background-color: #522f16; /* Footer color */
+}
+/* New class for dark accent sections */
+.section-dark-accent {
+    background-color: #4A3B2F; /* Deep, warm brown (kept for accent sections) */
+    color: #F0F0F0; /* Light text for these sections */
+}
+
