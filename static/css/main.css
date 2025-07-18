@@ -110,3 +110,13 @@ body {
         transform: translate(0, 0) scale(1);
     }
 }
+
+/* Particle effect styles */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    /* Background color will be set by JavaScript, but you can define a default here */
+    background-color: rgba(255, 255, 255, 0.8);
+    pointer-events: none; /* Allows clicks to pass through particles */
+    will-change: transform, opacity; /* Optimize animations */
+}

@@ -8,9 +8,10 @@
 
 {% block content %}
 
-<section class="py-20 text-center relative" style="background-color: #212121; overflow: hidden;"> {# Added relative and overflow: hidden #}
-    <div class="background-effect"></div> {# Added for the background effect #}
-    <div class="container mx-auto px-6 relative z-10"> {# Added relative z-10 to keep content above the effect #}
+<section class="py-20 text-center relative" style="background-color: #212121; overflow: hidden;">
+    <div class="background-effect absolute inset-0 z-0"></div> {# Re-added for the gradient background effect, z-0 #}
+    <div id="particles-container" class="absolute inset-0 overflow-hidden z-5"></div> {# Particle effect, z-5 to be above gradient #}
+    <div class="container mx-auto px-6 relative z-10"> {# Content, z-10 to be on top of both effects #}
         <h1 class="text-6xl font-extrabold text-white mb-6">
             Crafting <span class="text-[#A0522D]">Exceptional</span> Designs
         </h1>
@@ -19,8 +20,6 @@
         </p>
         <a href="/portfolio" class="btn-primary inline-block">View Our Work</a>
     </div>
-
-    {# HTML for the Bumper Effect has been removed #}
 </section>
 
 <section class="py-16 section-bg-light">
