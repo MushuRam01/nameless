@@ -44,6 +44,13 @@ def contact():
     """
     return render_template('contact.html')
 
+@app.route('/team')
+def team():
+    """
+    Renders the team page.
+    """
+    return render_template('team.html')
+
 
 
 

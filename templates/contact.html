@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - 1729 Chambers{% endblock %}
+
+{% block extra_css %}
+    {# All CSS has been moved to main.css #}
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-20 text-center relative" style="background-color: #212121;">
+    <div class="container mx-auto px-6 relative z-10">
+        <h1 class="text-6xl font-extrabold text-white mb-6">
+            Contact Us
+        </h1>
+        <p class="text-xl text-white mb-10 max-w-3xl mx-auto">
+            Ready to discuss your legal needs? Get in touch with <span style="color: #b77f58;">1729 Chambers</span> today.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Form and Globe Section -->
+<section class="py-16 section-white">
+    <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Contact Form -->
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6" style="color: #24324b;">Send Us a Message</h2>
+                <p class="text-gray-600 mb-8">
+                    Fill out the form below and our team will get back to you within 24 hours.
+                </p>
+                
+                <form id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company/Organization</label>
+                        <input type="text" id="company" name="company" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="legalArea" class="form-label">Area of Legal Interest</label>
+                        <select id="legalArea" name="legalArea" class="form-input">
+                            <option value="">Select an area</option>
+                            <option value="ipr">Intellectual Property Rights (IPR)</option>
+                            <option value="compliance">Compliance</option>
+                            <option value="legal-representation">Legal Representation</option>
+                            <option value="corporate">Corporate Law</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Please describe your legal needs or questions..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="consent" name="consent" class="mr-3" required>
+                            <span class="text-sm text-gray-600">
+                                I consent to 1729 Chambers collecting and processing my personal information for the purpose of responding to my inquiry. *
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Google Maps Locations -->
+            <div class="text-left">
+                <h2 class="text-3xl font-bold mb-6" style="color: #24324b;">Our <span class="text-accent">Locations</span></h2>
+                <p class="text-gray-600 mb-8">
+                    We have offices across India to serve you better. Visit our locations or contact us directly.
+                </p>
+                
+                <!-- Google Maps Container -->
+                <div class="maps-container mb-8">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg" style="height: 400px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.90089798553!2d77.46612669726563!3d12.953945899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Office Locations List -->
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-bold">📍</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Bangalore Office</h4>
+                            <p class="text-gray-600 text-sm">123 MG Road, Bangalore, Karnataka 560001</p>
+                            <p class="text-gray-500 text-xs mt-1">+91 80 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-bold">📍</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Chennai Office</h4>
+                            <p class="text-gray-600 text-sm">456 Anna Salai, Chennai, Tamil Nadu 600002</p>
+                            <p class="text-gray-500 text-xs mt-1">+91 44 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-bold">📍</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Delhi Office</h4>
+                            <p class="text-gray-600 text-sm">789 Connaught Place, New Delhi 110001</p>
+                            <p class="text-gray-500 text-xs mt-1">+91 11 1234 5678</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-gray-500 mt-6 text-center">
+                    Click on the map to get directions to our offices
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="py-16 section-bg-light">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-white text-center mb-12">Get In <span style="color: #b77f58;">Touch</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card p-8 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                    <span class="text-2xl text-white">📞</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Call Us</h3>
+                <p class="text-gray-600 mb-2">+91 1234567890</p>
+                <p class="text-gray-600">+1 (555) 123-4567</p>
+                <p class="text-sm text-gray-500 mt-2">Mon - Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+            
+            <div class="card p-8 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                    <span class="text-2xl text-white">✉️</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Email Us</h3>
+                <p class="text-gray-600 mb-2">info@1729chambers.com</p>
+                <p class="text-gray-600">legal@1729chambers.com</p>
+                <p class="text-sm text-gray-500 mt-2">We respond within 24 hours</p>
+            </div>
+            
+            <div class="card p-8 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                    <span class="text-2xl text-white">🕒</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Schedule Consultation</h3>
+                <p class="text-gray-600 mb-4">Book a free 30-minute consultation with our legal experts.</p>
+                <a href="#" style="color: #b77f58;" class="hover:text-blue-800 font-semibold">Schedule Now →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Contact Section -->
+<section class="py-12 section-white">
+    <div class="container mx-auto px-6 text-center">
+        <h3 class="text-2xl font-bold mb-4" style="color: #24324b;">Need Immediate <span class="text-accent">Legal Assistance</span>?</h3>
+        <p class="text-gray-600 mb-6">For urgent legal matters, contact our emergency hotline available 24/7.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+911234567890" class="btn-primary inline-block">Call Emergency Line</a>
+            <a href="mailto:emergency@1729chambers.com" class="inline-block px-8 py-4 border-2 font-semibold rounded-full transition-colors duration-300 hover:bg-white" style="border-color: #24324b; color: #24324b;">
+                Send Urgent Email
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Form submission (placeholder for backend integration)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Enhanced validation
+        if (!data.firstName.trim() || !data.lastName.trim() || !data.email.trim() || !data.message.trim()) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(data.email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        if (!data.consent) {
+            alert('Please consent to data processing to continue.');
+            return;
+        }
+        
+        // Show success message and reset form
+        alert('Thank you for your message! We will get back to you within 24 hours.');
+        this.reset();
+        
+        // Optional: Add visual feedback
+        const submitBtn = this.querySelector('.btn-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Message Sent!';
+        submitBtn.style.backgroundColor = '#28a745';
+        
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.backgroundColor = '#24324b';
+        }, 3000);
+    });
+</script>
+{% endblock %}
