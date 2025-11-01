@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, jsonify
+from team_data import PARTNERS, ASSOCIATES, DIRECTORS
 
 # Initialize Flask app
 # Flask will look for templates in a 'templates' folder
@@ -47,9 +48,12 @@ def contact():
 @app.route('/team')
 def team():
     """
-    Renders the team page.
+    Renders the team page with dynamic team data.
     """
-    return render_template('team.html')
+    return render_template('team.html', 
+                         partners=PARTNERS, 
+                         associates=ASSOCIATES, 
+                         directors=DIRECTORS)
 
 
 
@@ -58,4 +62,4 @@ if __name__ == '__main__':
     # Run the Flask development server
     # debug=True allows for automatic reloading on code changes and provides a debugger
     port = int(os.environ.get("PORT", 5000))
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=port)

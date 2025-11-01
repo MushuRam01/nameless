@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Our Team - 1729 Chambers{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Team line animation */
+    .team-line {
+        transform: scaleX(0);
+        transform-origin: center;
+        animation: growFromCenter 1.5s ease-out forwards;
+        animation-delay: 0.5s; /* Delay to let the heading appear first */
+    }
+
+    @keyframes growFromCenter {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    /* Optional: Add fade-in animation to the heading */
+    .team-heading {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Main Content Area -->
+<section class="py-16 section-white">
+    <div class="container mx-auto px-6">
+        <!-- Center Heading -->
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold team-heading" style="color: #24324b;">Our Team</h1>
+            <div class="w-full h-1 mx-auto mt-6 mb-16 team-line" style="background-color: #b77f58;"></div>
+        </div>
+        
+        <!-- Partners Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8" style="color: #24324b;">Partners</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+                {% for partner in partners %}
+                <div class="card p-8 text-center w-full">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden" style="background-color: #f3f4f6;">
+                        <img src="{{ url_for('static', filename=partner.image_path) }}" 
+                             alt="{{ partner.name }}" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://via.placeholder.com/128x128/b77f58/ffffff?text={{ partner.name[0] }}'">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">{{ partner.name }}</h3>
+                    <p class="text-gray-600 mb-3">{{ partner.designation }}</p>
+                    <a href="mailto:{{ partner.email }}" class="inline-block text-2xl hover:opacity-70 transition-opacity" style="color: #b77f58;" title="Send email to {{ partner.name }}">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Associates Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8" style="color: #24324b;">Associates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+                {% for associate in associates %}
+                <div class="card p-8 text-center w-full">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden" style="background-color: #f3f4f6;">
+                        <img src="{{ url_for('static', filename=associate.image_path) }}" 
+                             alt="{{ associate.name }}" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://via.placeholder.com/128x128/b77f58/ffffff?text={{ associate.name[0] }}'">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">{{ associate.name }}</h3>
+                    <p class="text-gray-600 mb-3">{{ associate.designation }}</p>
+                    <a href="mailto:{{ associate.email }}" class="inline-block text-2xl hover:opacity-70 transition-opacity" style="color: #b77f58;" title="Send email to {{ associate.name }}">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Directors Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8" style="color: #24324b;">Directors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+                {% for director in directors %}
+                <div class="card p-8 text-center w-full">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden" style="background-color: #f3f4f6;">
+                        <img src="{{ url_for('static', filename=director.image_path) }}" 
+                             alt="{{ director.name }}" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://via.placeholder.com/128x128/b77f58/ffffff?text={{ director.name[0] }}'">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">{{ director.name }}</h3>
+                    <p class="text-gray-600 mb-3">{{ director.designation }}</p>
+                    <a href="mailto:{{ director.email }}" class="inline-block text-2xl hover:opacity-70 transition-opacity" style="color: #b77f58;" title="Send email to {{ director.name }}">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+    {# Additional JavaScript for team page will go here #}
+{% endblock %}
