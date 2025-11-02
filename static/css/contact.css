@@ -1,188 +1,6 @@
-/* Custom styles for the Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 /* ==============================================
-   UNIVERSAL STYLES - FONTS, COLORS, LAYOUTS
+   CONTACT PAGE SPECIFIC STYLES
    ============================================== */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #FFFFFF; /* Clean white background */
-    color: #2C3E50; /* Dark text for contrast on white background */
-}
-
-.container {
-    max-width: 1200px;
-}
-
-/* ==============================================
-   THEME COLORS - BRAND IDENTITY
-   ============================================== */
-:root {
-    --primary-blue: #24324b;
-    --accent-brown: #b77f58;
-    --white: #FFFFFF;
-    --dark-text: #2C3E50;
-    --light-grey: #F8F9FA;
-    --grey-text: #6B7280;
-}
-
-/* Header and Navigation */
-.header-bg {
-    background-color: var(--primary-blue);
-}
-
-.nav-link {
-    transition: color 0.3s ease;
-    color: #E0E0E0;
-}
-
-.nav-link:hover {
-    color: var(--accent-brown);
-}
-
-/* Footer */
-.footer-dark-bg {
-    background-color: var(--primary-blue);
-}
-
-/* ==============================================
-   UNIVERSAL COMPONENTS - BUTTONS, CARDS, SECTIONS
-   ============================================== */
-
-/* Primary Button */
-.btn-primary {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #1a2332;
-    transform: translateY(-2px);
-}
-
-/* Universal Card Component */
-.card {
-    background-color: var(--white);
-    color: var(--dark-text);
-    border-radius: 1rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.15), 0 20px 32px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
-}
-
-/* ==============================================
-   SECTION BACKGROUNDS
-   ============================================== */
-
-/* Light section background */
-.section-bg-light {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
-/* White section */
-.section-white {
-    background-color: var(--white);
-    color: var(--dark-text);
-}
-
-/* Light grey section */
-.section-light-grey {
-    background-color: var(--light-grey);
-    color: var(--dark-text);
-}
-
-/* Dark accent sections */
-.section-dark-accent {
-    background-color: var(--accent-brown);
-    color: #F0F0F0;
-}
-
-/* ==============================================
-   TEXT UTILITIES
-   ============================================== */
-
-/* Accent text color for highlights */
-.text-accent {
-    color: var(--accent-brown);
-}
-
-/* ==============================================
-   UNIVERSAL ANIMATIONS & EFFECTS
-   ============================================== */
-
-/* Background effect styles */
-.background-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.background-effect::before,
-.background-effect::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.5;
-    filter: blur(15px);
-    animation: moveEffect 40s infinite ease-in-out alternate;
-}
-
-.background-effect::before {
-    width: 60vmax;
-    height: 60vmax;
-    background: linear-gradient(to right, #A0522D, var(--accent-brown));
-    top: -30vmax;
-    left: -30vmax;
-}
-
-.background-effect::after {
-    width: 70vmax;
-    height: 70vmax;
-    background: linear-gradient(to right, #D4B89F, var(--accent-brown));
-    bottom: -35vmax;
-    right: -35vmax;
-    animation-delay: -10s;
-}
-
-@keyframes moveEffect {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(20%, 20%) scale(1.1);
-    }
-    50% {
-        transform: translate(-15%, 10%) scale(0.9);
-    }
-    75% {
-        transform: translate(10%, -20%) scale(1.05);
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-/* Particle effect styles */
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    will-change: transform, opacity;
-}
 
 /* Contact Page Globe and Form Styles */
 .globe-container {
@@ -288,7 +106,7 @@ body {
 
 .pin-tooltip {
     position: absolute;
-    background-color: #24324b;
+    background-color: var(--primary-blue);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
@@ -311,7 +129,7 @@ body {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #24324b transparent transparent transparent;
+    border-color: var(--primary-blue) transparent transparent transparent;
 }
 
 .location-pin:hover .pin-tooltip {
@@ -357,7 +175,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #24324b;
+    color: var(--primary-blue);
 }
 
 .form-input, .form-textarea {
@@ -367,13 +185,13 @@ body {
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #ffffff;
+    background-color: var(--white);
     font-family: 'Inter', sans-serif;
 }
 
 .form-input:focus, .form-textarea:focus {
     outline: none;
-    border-color: #24324b;
+    border-color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(36, 50, 75, 0.1);
 }
 
@@ -383,7 +201,7 @@ body {
 }
 
 .btn-submit {
-    background-color: #24324b;
+    background-color: var(--primary-blue);
     color: white;
     padding: 0.875rem 2rem;
     border: none;
@@ -402,9 +220,31 @@ body {
     box-shadow: 0 4px 12px rgba(36, 50, 75, 0.3);
 }
 
+/* Maps container styling */
+.maps-container {
+    position: relative;
+}
+
+/* Office locations styling */
+.office-location {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.office-location:hover {
+    border-color: var(--accent-brown);
+    box-shadow: 0 4px 12px rgba(183, 127, 88, 0.1);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .globe-container {
         width: 300px;
         height: 300px;
+    }
+    
+    .form-input, .form-textarea {
+        font-size: 16px; /* Prevent zoom on iOS */
     }
 }

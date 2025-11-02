@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - 1729 Chambers{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Portfolio animations */
+    .portfolio-card {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .portfolio-card:nth-child(1) { animation-delay: 0.1s; }
+    .portfolio-card:nth-child(2) { animation-delay: 0.2s; }
+    .portfolio-card:nth-child(3) { animation-delay: 0.3s; }
+    .portfolio-card:nth-child(4) { animation-delay: 0.4s; }
+    .portfolio-card:nth-child(5) { animation-delay: 0.5s; }
+    .portfolio-card:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Portfolio line animation */
+    .portfolio-line {
+        transform: scaleX(0);
+        transform-origin: center;
+        animation: growFromCenter 1.5s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes growFromCenter {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    /* Portfolio heading animation */
+    .portfolio-heading {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Practice area cards hover effect */
+    .practice-card {
+        transition: all 0.3s ease;
+    }
+
+    .practice-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(36, 50, 75, 0.15);
+    }
+
+    /* Case study cards */
+    .case-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid #b77f58;
+    }
+
+    .case-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 20px rgba(183, 127, 88, 0.2);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Main Content Area -->
+<section class="py-16 section-white">
+    <div class="container mx-auto px-6">
+        <!-- Center Heading -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold portfolio-heading" style="color: #24324b;">Our Portfolio</h1>
+            <div class="w-full h-1 mx-auto mt-6 mb-8 portfolio-line" style="background-color: #b77f58;"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our track record of success across diverse legal matters. 
+                We pride ourselves on delivering exceptional results for our clients.
+            </p>
+        </div>
+
+        <!-- Practice Areas Section -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-semibold text-center mb-12" style="color: #24324b;">Practice Areas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Corporate Law -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Corporate Law</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive corporate legal services including mergers, acquisitions, compliance, and governance.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">50+</span> Successful Transactions
+                    </div>
+                </div>
+
+                <!-- Litigation -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Litigation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert representation in complex commercial disputes, civil litigation, and appellate matters.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">85%</span> Success Rate
+                    </div>
+                </div>
+
+                <!-- Intellectual Property -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Intellectual Property</h3>
+                    <p class="text-gray-600 mb-4">
+                        Protection and enforcement of patents, trademarks, copyrights, and trade secrets.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">200+</span> IP Registrations
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Real Estate</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete real estate legal services from acquisitions to development and leasing.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">₹500Cr+</span> Transactions
+                    </div>
+                </div>
+
+                <!-- Banking & Finance -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Banking & Finance</h3>
+                    <p class="text-gray-600 mb-4">
+                        Sophisticated banking and finance transactions, regulatory compliance, and structured finance.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">₹1000Cr+</span> Financing
+                    </div>
+                </div>
+
+                <!-- Employment Law -->
+                <div class="portfolio-card practice-card card p-8 text-center">
+                    <div class="text-4xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Employment Law</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive employment law services including contracts, disputes, and compliance.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">100+</span> Cases Resolved
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Studies Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-12" style="color: #24324b;">Notable Case Studies</h2>
+            <div class="space-y-8 max-w-4xl mx-auto">
+                
+                <!-- Case Study 1 -->
+                <div class="case-card card p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold mb-2 md:mb-0" style="color: #24324b;">
+                            Major Acquisition in Technology Sector
+                        </h3>
+                        <span class="text-sm px-3 py-1 rounded-full" style="background-color: #f3f4f6; color: #24324b;">
+                            Corporate Law
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Successfully advised a leading technology company in a ₹850 crore acquisition, 
+                        handling complex regulatory approvals and cross-border compliance issues.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span><strong>Value:</strong> ₹850 Crores</span>
+                        <span><strong>Duration:</strong> 8 months</span>
+                        <span><strong>Outcome:</strong> Successful completion</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card card p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold mb-2 md:mb-0" style="color: #24324b;">
+                            Landmark Supreme Court Victory
+                        </h3>
+                        <span class="text-sm px-3 py-1 rounded-full" style="background-color: #f3f4f6; color: #24324b;">
+                            Litigation
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Represented a multinational corporation in a precedent-setting case before the Supreme Court, 
+                        resulting in a favorable judgment that clarified important commercial law principles.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span><strong>Court:</strong> Supreme Court of India</span>
+                        <span><strong>Duration:</strong> 3 years</span>
+                        <span><strong>Outcome:</strong> Favorable judgment</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-card card p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold mb-2 md:mb-0" style="color: #24324b;">
+                            Complex Real Estate Development
+                        </h3>
+                        <span class="text-sm px-3 py-1 rounded-full" style="background-color: #f3f4f6; color: #24324b;">
+                            Real Estate
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Facilitated the legal framework for a ₹1200 crore mixed-use development project, 
+                        including joint ventures, regulatory approvals, and financing arrangements.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span><strong>Value:</strong> ₹1200 Crores</span>
+                        <span><strong>Area:</strong> 25 acres</span>
+                        <span><strong>Outcome:</strong> Project launched successfully</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Testimonials Section -->
+        <div class="bg-gray-50 rounded-lg p-12 text-center">
+            <h2 class="text-3xl font-semibold mb-8" style="color: #24324b;">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-3xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "1729 Chambers provided exceptional legal guidance throughout our acquisition. 
+                        Their attention to detail and strategic thinking were invaluable."
+                    </p>
+                    <div class="font-semibold" style="color: #24324b;">— CEO, Tech Solutions Pvt Ltd</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-3xl mb-4" style="color: #b77f58;">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "Professional, thorough, and results-oriented. They helped us navigate complex 
+                        regulatory challenges with confidence."
+                    </p>
+                    <div class="font-semibold" style="color: #24324b;">— General Counsel, Manufacturing Corp</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Add any portfolio-specific JavaScript here
+    // For example, filtering functionality or case study modals
+</script>
+{% endblock %}

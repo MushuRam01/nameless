@@ -34,7 +34,7 @@ def services():
 @app.route('/portfolio')
 def portfolio():
     """
-    Renders the portfolio page.
+    Renders the portfolio page showcasing practice areas and case studies.
     """
     return render_template('portfolio.html')
 
