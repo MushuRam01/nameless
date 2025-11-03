@@ -1,0 +1,336 @@
+/* ==============================================
+   PORTFOLIO PAGE SPECIFIC STYLES
+   ============================================== */
+
+/* Portfolio animations */
+.portfolio-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.portfolio-card:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-card:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-card:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-card:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-card:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Portfolio line animation */
+.portfolio-line {
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: growFromCenter 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes growFromCenter {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Portfolio heading animation */
+.portfolio-heading {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Practice area cards hover effect */
+.practice-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(36, 50, 75, 0.1), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.practice-card:hover::before {
+    left: 100%;
+}
+
+.practice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(36, 50, 75, 0.15);
+}
+
+/* Practice area icons */
+.practice-icon {
+    color: var(--accent-brown);
+    transition: all 0.3s ease;
+}
+
+.practice-card:hover .practice-icon {
+    color: var(--primary-blue);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Practice area metrics */
+.practice-metric {
+    font-weight: 600;
+    color: var(--accent-brown);
+}
+
+/* Case study cards */
+.case-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-brown);
+    position: relative;
+}
+
+.case-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(183, 127, 88, 0.2);
+    border-left-color: var(--primary-blue);
+}
+
+/* Case study category tags */
+.case-category {
+    background-color: var(--light-grey);
+    color: var(--primary-blue);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.case-card:hover .case-category {
+    background-color: var(--accent-brown);
+    color: white;
+}
+
+/* Case study details */
+.case-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--grey-text);
+}
+
+.case-detail-item {
+    position: relative;
+}
+
+.case-detail-item strong {
+    color: var(--primary-blue);
+}
+
+/* Portfolio statistics */
+.portfolio-stat {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.portfolio-stat:hover {
+    background-color: rgba(36, 50, 75, 0.05);
+    transform: translateY(-2px);
+}
+
+.portfolio-stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-brown);
+    display: block;
+}
+
+.portfolio-stat-label {
+    color: var(--grey-text);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Client testimonials specific styling */
+.testimonial-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-quote {
+    color: var(--accent-brown);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    color: var(--grey-text);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* Portfolio page background patterns */
+.portfolio-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, transparent 30%, rgba(36, 50, 75, 0.02) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(183, 127, 88, 0.02) 50%, transparent 70%);
+    z-index: -1;
+}
+
+/* Practice areas grid */
+.practice-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Case studies timeline */
+.case-studies-container {
+    max-width: 4rem;
+    margin: 0 auto;
+}
+
+/* Interactive elements */
+.portfolio-interactive {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio-interactive:hover {
+    opacity: 0.8;
+}
+
+/* Loading states for portfolio items */
+.portfolio-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.portfolio-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--light-grey);
+    border-top: 4px solid var(--accent-brown);
+    border-radius: 50%;
+    animation: portfolioSpin 1s linear infinite;
+}
+
+@keyframes portfolioSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Portfolio filter buttons (if needed for future enhancements) */
+.portfolio-filter {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: 2px solid var(--accent-brown);
+    border-radius: 9999px;
+    color: var(--accent-brown);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.active {
+    background: var(--accent-brown);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .practice-areas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .practice-areas-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .case-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .portfolio-stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .portfolio-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .portfolio-card {
+        margin-bottom: 1rem;
+    }
+    
+    .case-card {
+        padding: 1rem;
+    }
+    
+    .testimonial-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Print styles for portfolio */
+@media print {
+    .portfolio-card {
+        break-inside: avoid;
+        animation: none;
+    }
+    
+    .practice-card:hover,
+    .case-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

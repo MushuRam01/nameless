@@ -1,0 +1,157 @@
+/* ==============================================
+   HOME PAGE SPECIFIC STYLES
+   ============================================== */
+
+/* Hero section styling */
+.hero-section {
+    background-color: #212121;
+    overflow: hidden;
+}
+
+/* Why Choose Us section styling */
+.why-choose-heading {
+    color: var(--primary-blue);
+}
+
+.why-choose-description {
+    color: var(--dark-text);
+}
+
+/* Feature icons styling */
+.feature-icon-container {
+    background-color: var(--accent-brown);
+}
+
+.feature-heading {
+    color: var(--primary-blue);
+}
+
+/* Client testimonials section */
+.testimonials-heading-accent {
+    color: var(--accent-brown);
+}
+
+/* Call to action section */
+.cta-section {
+    background-color: #212121;
+}
+
+.cta-brand-accent {
+    color: var(--accent-brown);
+}
+
+/* Home page specific animations */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon-container {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-container {
+    background-color: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+/* Testimonial cards styling */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(36, 50, 75, 0.1);
+}
+
+/* Star ratings */
+.star-rating {
+    color: #fbbf24; /* Yellow color for stars */
+}
+
+/* Contact info in CTA section */
+.contact-info-grid {
+    margin-top: 3rem;
+}
+
+.contact-info-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+    color: #d1d5db; /* Light gray for contact details */
+}
+
+/* Button hover effects */
+.cta-secondary-button {
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.cta-secondary-button:hover {
+    background-color: white;
+    color: #212121;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem; /* Smaller hero text on mobile */
+    }
+    
+    .hero-section p {
+        font-size: 1.125rem;
+    }
+    
+    .feature-icon-container {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .contact-info-grid {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .cta-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Accessibility improvements */
+.feature-card:focus {
+    outline: 2px solid var(--accent-brown);
+    outline-offset: 2px;
+}
+
+.testimonial-card:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .hero-section,
+    .cta-section {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .feature-icon-container {
+        background-color: var(--primary-blue) !important;
+    }
+}

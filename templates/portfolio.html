@@ -3,76 +3,7 @@
 {% block title %}Portfolio - 1729 Chambers{% endblock %}
 
 {% block extra_css %}
-<style>
-    /* Portfolio animations */
-    .portfolio-card {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .portfolio-card:nth-child(1) { animation-delay: 0.1s; }
-    .portfolio-card:nth-child(2) { animation-delay: 0.2s; }
-    .portfolio-card:nth-child(3) { animation-delay: 0.3s; }
-    .portfolio-card:nth-child(4) { animation-delay: 0.4s; }
-    .portfolio-card:nth-child(5) { animation-delay: 0.5s; }
-    .portfolio-card:nth-child(6) { animation-delay: 0.6s; }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Portfolio line animation */
-    .portfolio-line {
-        transform: scaleX(0);
-        transform-origin: center;
-        animation: growFromCenter 1.5s ease-out forwards;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes growFromCenter {
-        from {
-            transform: scaleX(0);
-        }
-        to {
-            transform: scaleX(1);
-        }
-    }
-
-    /* Portfolio heading animation */
-    .portfolio-heading {
-        opacity: 0;
-        animation: fadeInUp 1s ease-out forwards;
-    }
-
-    /* Practice area cards hover effect */
-    .practice-card {
-        transition: all 0.3s ease;
-    }
-
-    .practice-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(36, 50, 75, 0.15);
-    }
-
-    /* Case study cards */
-    .case-card {
-        transition: all 0.3s ease;
-        border-left: 4px solid #b77f58;
-    }
-
-    .case-card:hover {
-        transform: translateX(5px);
-        box-shadow: 0 8px 20px rgba(183, 127, 88, 0.2);
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
 {% endblock %}
 
 {% block content %}

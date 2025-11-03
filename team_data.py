@@ -3,16 +3,16 @@
 
 PARTNERS = [
     {
-        "name": "John Smith",
+        "name": "Chaitanya Kosuri",
         "designation": "Senior Partner",
-        "email": "john.smith@1729chambers.com",
-        "image_path": "images/team/john_smith.jpg"
+        "email": "chaitanya.kosuri@1729chambers.com",
+        "image_path": "images/team/chaitanya.jpg"
     },
     {
-        "name": "Sarah Johnson",
+        "name": "Paranthaman Subramaniam",
         "designation": "Managing Partner", 
-        "email": "sarah.johnson@1729chambers.com",
-        "image_path": "images/team/sarah_johnson.jpg"
+        "email": "paranthaman.subramaniam@1729chambers.com",
+        "image_path": "images/team/paranthnam.jpg"
     }
 ]
 
@@ -39,10 +39,10 @@ ASSOCIATES = [
 
 DIRECTORS = [
     {
-        "name": "Lisa Wang",
-        "designation": "Executive Director",
-        "email": "lisa.wang@1729chambers.com",
-        "image_path": "images/team/lisa_wang.jpg"
+        "name": "Rupini Raman",
+        "designation": "Paralegal Director",
+        "email": "rupini.raman@1729chambers.com",
+        "image_path": "images/team/rupini.png"
     },
     {
         "name": "Robert Brown",

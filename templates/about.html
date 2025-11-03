@@ -3,426 +3,200 @@
 {% block title %}About Us - 1729 Chambers{% endblock %}
 
 {% block extra_css %}
-<style>
-    /* Futuristic glassmorphism effects */
-    .glass-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .glass-dark {
-        background: rgba(36, 50, 75, 0.15);
-        backdrop-filter: blur(25px);
-        border: 1px solid rgba(36, 50, 75, 0.2);
-    }
-
-    .glass-accent {
-        background: rgba(183, 127, 88, 0.1);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(183, 127, 88, 0.3);
-    }
-
-    /* Floating animation */
-    .floating {
-        animation: floating 6s ease-in-out infinite;
-    }
-
-    .floating-delayed {
-        animation: floating 6s ease-in-out infinite;
-        animation-delay: 2s;
-    }
-
-    .floating-slow {
-        animation: floating 8s ease-in-out infinite;
-        animation-delay: 4s;
-    }
-
-    @keyframes floating {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(2deg); }
-    }
-
-    /* Parallax layers */
-    .parallax-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        background: linear-gradient(135deg, 
-            rgba(36, 50, 75, 0.05) 0%, 
-            rgba(183, 127, 88, 0.05) 50%, 
-            rgba(255, 255, 255, 0.1) 100%);
-    }
-
-    /* Geometric shapes */
-    .geo-shape {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(1px);
-        opacity: 0.6;
-    }
-
-    .shape-1 {
-        width: 200px;
-        height: 200px;
-        background: linear-gradient(45deg, rgba(36, 50, 75, 0.1), rgba(183, 127, 88, 0.1));
-        top: 10%;
-        right: 10%;
-        animation: rotate 20s linear infinite;
-    }
-
-    .shape-2 {
-        width: 150px;
-        height: 150px;
-        background: linear-gradient(135deg, rgba(183, 127, 88, 0.15), rgba(36, 50, 75, 0.1));
-        bottom: 20%;
-        left: 15%;
-        animation: rotate 25s linear infinite reverse;
-    }
-
-    .shape-3 {
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(36, 50, 75, 0.1));
-        top: 60%;
-        right: 20%;
-        animation: rotate 15s linear infinite;
-    }
-
-    @keyframes rotate {
-        from { transform: rotate(0deg) scale(1); }
-        50% { transform: rotate(180deg) scale(1.1); }
-        to { transform: rotate(360deg) scale(1); }
-    }
-
-    /* Text reveal animation */
-    .text-reveal {
-        overflow: hidden;
-        position: relative;
-    }
-
-    .text-reveal::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(183, 127, 88, 0.8), transparent);
-        animation: reveal 2s ease-out forwards;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes reveal {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-
-    /* Hover glow effects */
-    .glow-hover {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        position: relative;
-    }
-
-    .glow-hover::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: linear-gradient(45deg, #24324b, #b77f58, #24324b);
-        border-radius: inherit;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .glow-hover:hover::before {
-        opacity: 0.7;
-        animation: glow-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes glow-pulse {
-        0%, 100% { filter: blur(5px); }
-        50% { filter: blur(10px); }
-    }
-
-    /* Liquid morphing background */
-    .liquid-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
-        border-radius: inherit;
-    }
-
-    .liquid-blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(20px);
-        animation: morph 10s ease-in-out infinite;
-        opacity: 0.3;
-    }
-
-    .blob-1 {
-        width: 300px;
-        height: 300px;
-        background: linear-gradient(45deg, #24324b, #b77f58);
-        top: -150px;
-        left: -150px;
-        animation-delay: 0s;
-    }
-
-    .blob-2 {
-        width: 200px;
-        height: 200px;
-        background: linear-gradient(135deg, #b77f58, #24324b);
-        bottom: -100px;
-        right: -100px;
-        animation-delay: 5s;
-    }
-
-    @keyframes morph {
-        0%, 100% { 
-            transform: translateX(0) translateY(0) scale(1);
-            border-radius: 50%;
-        }
-        25% { 
-            transform: translateX(20px) translateY(-30px) scale(1.2);
-            border-radius: 60% 40% 30% 70%;
-        }
-        50% { 
-            transform: translateX(-20px) translateY(20px) scale(0.8);
-            border-radius: 30% 60% 70% 40%;
-        }
-        75% { 
-            transform: translateX(30px) translateY(10px) scale(1.1);
-            border-radius: 40% 50% 60% 30%;
-        }
-    }
-
-    /* Stats counter animation */
-    .stats-number {
-        font-family: 'Courier New', monospace;
-        font-weight: bold;
-        color: #b77f58;
-        font-size: 2.5rem;
-    }
-
-    /* Timeline styles */
-    .timeline-item {
-        position: relative;
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 0.6s ease;
-    }
-
-    .timeline-item.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .timeline-line {
-        position: absolute;
-        left: 30px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, #24324b, #b77f58, #24324b);
-    }
-
-    .timeline-dot {
-        position: absolute;
-        left: 22px;
-        top: 20px;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: #b77f58;
-        border: 3px solid #24324b;
-        z-index: 1;
-        animation: pulse-dot 2s infinite;
-    }
-
-    @keyframes pulse-dot {
-        0% { box-shadow: 0 0 0 0 rgba(183, 127, 88, 0.7); }
-        70% { box-shadow: 0 0 0 10px rgba(183, 127, 88, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(183, 127, 88, 0); }
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(36, 50, 75, 0.1);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #24324b, #b77f58);
-        border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(to bottom, #b77f58, #24324b);
-    }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 {% endblock %}
 
 {% block content %}
 
-<!-- Parallax Background -->
-<div class="parallax-bg" id="parallaxBg"></div>
-
-<!-- Floating Geometric Shapes -->
-<div class="geo-shape shape-1 floating"></div>
-<div class="geo-shape shape-2 floating-delayed"></div>
-<div class="geo-shape shape-3 floating-slow"></div>
-
 <!-- Main Content Area -->
-<section class="py-20 relative min-h-screen">
-    <div class="container mx-auto px-6 relative z-10">
+<section class="py-20 section-white">
+    <div class="container mx-auto px-6">
         
-        <!-- Hero Section with Glassmorphism -->
-        <div class="text-center mb-20 relative">
-            <div class="glass-card p-12 mx-auto max-w-4xl glow-hover">
-                <div class="liquid-bg">
-                    <div class="liquid-blob blob-1"></div>
-                    <div class="liquid-blob blob-2"></div>
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-6 fade-in-up" style="color: #24324b;">
+                About 1729 Chambers
+            </h1>
+            <div class="w-32 h-1 mx-auto mb-8 bg-accent animate-line"></div>
+            <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto fade-in-up delay-1">
+                Where others see ordinary numbers, we discover extraordinary meaning. 
+                Like Ramanujan finding profound beauty in what Hardy thought mundane, we see what others miss.
+            </p>
+        </div>
+
+        <!-- Philosophy Section -->
+        <div class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in-left">
+                        <h2 class="text-3xl font-semibold mb-6" style="color: #24324b;">Our Philosophy</h2>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>
+                                In 1918, mathematician G.H. Hardy visited his colleague Srinivasa Ramanujan in hospital. 
+                                Hardy mentioned that he had arrived in taxi number 1729, calling it "a rather dull number."
+                            </p>
+                            <p>
+                                Ramanujan immediately replied, "No, it is a very interesting number; it is the smallest 
+                                number expressible as the sum of two cubes in two different ways."
+                            </p>
+                            <p class="font-medium" style="color: #b77f58;">
+                                This moment perfectly captures our approach to law: where others see the ordinary, 
+                                we discover the extraordinary. We find the hidden connections, the overlooked opportunities, 
+                                and the profound solutions that make all the difference.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in-right">
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="text-center mb-6">
+                                <div class="text-6xl font-bold mb-2" style="color: #b77f58;">1729</div>
+                                <p class="text-gray-600">The Hardy-Ramanujan Number</p>
+                            </div>
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex justify-between">
+                                    <span>1³ + 12³ =</span>
+                                    <span class="font-mono">1 + 1728 = 1729</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>9³ + 10³ =</span>
+                                    <span class="font-mono">729 + 1000 = 1729</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="text-6xl font-bold mb-6 text-reveal" style="color: #24324b;">
-                    About 1729 Chambers
-                </h1>
-                <p class="text-xl text-gray-700 leading-relaxed">
-                    Where innovation meets tradition. We see what you don't.
-                </p>
             </div>
         </div>
 
-        <!-- Vision Statement -->
+        <!-- Our Story Timeline -->
         <div class="mb-20">
-            <div class="glass-dark p-10 rounded-3xl mx-auto max-w-5xl floating">
-                <div class="text-center">
-                    <h2 class="text-4xl font-semibold mb-8" style="color: #b77f58;">Our Vision</h2>
-                    <p class="text-xl text-white leading-relaxed max-w-3xl mx-auto">
-                        "To redefine legal excellence through innovative thinking, cutting-edge technology, 
-                        and unwavering commitment to justice. We bridge the gap between traditional law 
-                        and the future of legal practice."
+            <h2 class="text-3xl font-semibold text-center mb-12" style="color: #24324b;">Our Journey</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-container relative">
+                    <!-- Timeline Line -->
+                    <div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5" style="background-color: #b77f58;"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="timeline-item relative pl-20 pb-12 fade-in-timeline" data-delay="0">
+                        <div class="timeline-marker absolute left-6 w-4 h-4 rounded-full border-4 border-white" style="background-color: #b77f58; box-shadow: 0 0 0 3px #24324b;"></div>
+                        <div class="card p-6">
+                            <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2009 - Foundation</h3>
+                            <p class="text-gray-600">
+                                1729 Chambers was established with a vision to approach legal challenges 
+                                like Ramanujan approached mathematics - finding profound insights where others see complexity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-20 pb-12 fade-in-timeline" data-delay="200">
+                        <div class="timeline-marker absolute left-6 w-4 h-4 rounded-full border-4 border-white" style="background-color: #b77f58; box-shadow: 0 0 0 3px #24324b;"></div>
+                        <div class="card p-6">
+                            <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2015 - Recognition</h3>
+                            <p class="text-gray-600">
+                                Our unique approach to intellectual property and complex litigation gained recognition, 
+                                establishing us as thought leaders in innovative legal solutions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-20 pb-12 fade-in-timeline" data-delay="400">
+                        <div class="timeline-marker absolute left-6 w-4 h-4 rounded-full border-4 border-white" style="background-color: #b77f58; box-shadow: 0 0 0 3px #24324b;"></div>
+                        <div class="card p-6">
+                            <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2020 - Innovation</h3>
+                            <p class="text-gray-600">
+                                We pioneered technology-assisted legal research and client collaboration, 
+                                proving that traditional legal wisdom combined with modern tools creates powerful outcomes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative pl-20 fade-in-timeline" data-delay="600">
+                        <div class="timeline-marker absolute left-6 w-4 h-4 rounded-full border-4 border-white" style="background-color: #b77f58; box-shadow: 0 0 0 3px #24324b;"></div>
+                        <div class="card p-6">
+                            <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">Today - Excellence</h3>
+                            <p class="text-gray-600">
+                                We continue to see what others miss, delivering exceptional legal outcomes 
+                                through deep understanding, innovative thinking, and unwavering commitment to our clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-semibold text-center mb-12" style="color: #24324b;">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center fade-in-up" data-delay="0">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                        <i class="fas fa-eye text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Insight</h3>
+                    <p class="text-gray-600">
+                        We see patterns and possibilities that others overlook, finding elegant solutions 
+                        to complex legal challenges.
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in-up" data-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                        <i class="fas fa-lightbulb text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Innovation</h3>
+                    <p class="text-gray-600">
+                        Like Ramanujan's mathematical breakthroughs, we approach each case with 
+                        fresh perspective and creative problem-solving.
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in-up" data-delay="400">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Integrity</h3>
+                    <p class="text-gray-600">
+                        We maintain the highest ethical standards while pursuing innovative solutions 
+                        for our clients' most challenging legal needs.
                     </p>
                 </div>
             </div>
         </div>
 
-        <!-- Stats Section -->
-        <div class="mb-20">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="glass-accent p-8 text-center rounded-2xl glow-hover floating" data-delay="0">
-                    <div class="stats-number" data-target="15">0</div>
-                    <p class="text-gray-700 font-semibold">Years Experience</p>
+        <!-- Statistics -->
+        <div class="mb-20 section-bg-light py-16 -mx-6 px-6 rounded-lg">
+            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div class="fade-in-up" data-delay="0">
+                    <div class="text-4xl font-bold mb-2 counter" data-target="15">0</div>
+                    <p class="text-gray-300">Years of Excellence</p>
                 </div>
-                <div class="glass-accent p-8 text-center rounded-2xl glow-hover floating-delayed" data-delay="100">
-                    <div class="stats-number" data-target="500">0</div>
-                    <p class="text-gray-700 font-semibold">Cases Won</p>
+                <div class="fade-in-up" data-delay="100">
+                    <div class="text-4xl font-bold mb-2 counter" data-target="250">0</div>
+                    <p class="text-gray-300">Successful Cases</p>
                 </div>
-                <div class="glass-accent p-8 text-center rounded-2xl glow-hover floating" data-delay="200">
-                    <div class="stats-number" data-target="50">0</div>
-                    <p class="text-gray-700 font-semibold">Expert Lawyers</p>
+                <div class="fade-in-up" data-delay="200">
+                    <div class="text-4xl font-bold mb-2 counter" data-target="50">0</div>
+                    <p class="text-gray-300">Expert Attorneys</p>
                 </div>
-                <div class="glass-accent p-8 text-center rounded-2xl glow-hover floating-delayed" data-delay="300">
-                    <div class="stats-number" data-target="1000">0</div>
-                    <p class="text-gray-700 font-semibold">Happy Clients</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Company Timeline -->
-        <div class="mb-20">
-            <h2 class="text-4xl font-semibold text-center mb-12" style="color: #24324b;">Our Journey</h2>
-            <div class="max-w-4xl mx-auto relative">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="ml-20 glass-card p-6 mb-8">
-                        <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2009 - Foundation</h3>
-                        <p class="text-gray-600">1729 Chambers was established with a vision to revolutionize legal practice through innovation and excellence.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="ml-20 glass-card p-6 mb-8">
-                        <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2015 - Expansion</h3>
-                        <p class="text-gray-600">Expanded our practice areas and opened new offices in Mumbai and Bangalore, strengthening our national presence.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="ml-20 glass-card p-6 mb-8">
-                        <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2020 - Digital Transformation</h3>
-                        <p class="text-gray-600">Pioneered digital legal services and AI-assisted case research, setting new industry standards.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot"></div>
-                    <div class="ml-20 glass-card p-6 mb-8">
-                        <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">2025 - Future Vision</h3>
-                        <p class="text-gray-600">Leading the charge in legal technology innovation while maintaining our commitment to traditional values.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Core Values -->
-        <div class="mb-20">
-            <h2 class="text-4xl font-semibold text-center mb-12" style="color: #24324b;">Our Core Values</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 text-center glow-hover transform hover:scale-105 transition-all duration-500">
-                    <div class="text-5xl mb-6" style="color: #b77f58;">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Vision</h3>
-                    <p class="text-gray-600">We see beyond the obvious, uncovering opportunities and solutions others miss.</p>
-                </div>
-                
-                <div class="glass-card p-8 text-center glow-hover transform hover:scale-105 transition-all duration-500">
-                    <div class="text-5xl mb-6" style="color: #b77f58;">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Innovation</h3>
-                    <p class="text-gray-600">Constantly evolving our methods to provide cutting-edge legal solutions.</p>
-                </div>
-                
-                <div class="glass-card p-8 text-center glow-hover transform hover:scale-105 transition-all duration-500">
-                    <div class="text-5xl mb-6" style="color: #b77f58;">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4" style="color: #24324b;">Integrity</h3>
-                    <p class="text-gray-600">Upholding the highest ethical standards in every case we handle.</p>
+                <div class="fade-in-up" data-delay="300">
+                    <div class="text-4xl font-bold mb-2 counter" data-target="500">0</div>
+                    <p class="text-gray-300">Satisfied Clients</p>
                 </div>
             </div>
         </div>
 
         <!-- Call to Action -->
         <div class="text-center">
-            <div class="glass-dark p-12 rounded-3xl mx-auto max-w-3xl glow-hover">
-                <h2 class="text-3xl font-semibold mb-6 text-white">Ready to Experience the Future of Law?</h2>
-                <p class="text-xl text-gray-300 mb-8">Let us show you what we see.</p>
-                <a href="/contact" class="inline-block px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 hover:scale-110 hover:shadow-lg" 
-                   style="background: linear-gradient(45deg, #24324b, #b77f58);">
-                    Get In Touch
+            <h2 class="text-3xl font-semibold mb-6" style="color: #24324b;">Ready to Discover What Others Miss?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Let us apply our unique perspective to your legal challenges and uncover 
+                the extraordinary solutions that make all the difference.
+            </p>
+            <div class="space-x-4">
+                <a href="/contact" class="btn-primary inline-block">Get In Touch</a>
+                <a href="/portfolio" class="inline-block px-8 py-4 border-2 font-semibold rounded-full transition-colors duration-300 hover:bg-gray-50" 
+                   style="border-color: #24324b; color: #24324b;">
+                    View Our Work
                 </a>
             </div>
         </div>

@@ -1,69 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.2" width="210mm" height="297mm" viewBox="0 0 21000 29700" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xml:space="preserve">
- <defs class="ClipPathGroup">
-  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
-   <rect x="0" y="0" width="21000" height="29700"/>
-  </clipPath>
-  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
-   <rect x="21" y="29" width="20958" height="29641"/>
-  </clipPath>
- </defs>
- <defs class="TextShapeIndex">
-  <g ooo:slide="id1" ooo:id-list="id3"/>
- </defs>
- <defs class="EmbeddedBulletChars">
-  <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
-  </g>
-  <g id="bullet-char-template-57354" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
-  </g>
-  <g id="bullet-char-template-10146" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
-  </g>
-  <g id="bullet-char-template-10132" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
-  </g>
-  <g id="bullet-char-template-10007" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
-  </g>
-  <g id="bullet-char-template-10004" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
-  </g>
-  <g id="bullet-char-template-9679" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
-  </g>
-  <g id="bullet-char-template-8226" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
-  </g>
-  <g id="bullet-char-template-8211" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
-  </g>
-  <g id="bullet-char-template-61548" transform="scale(0.00048828125,-0.00048828125)">
-   <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
-  </g>
- </defs>
- <g>
-  <g id="id2" class="Master_Slide">
-   <g id="bg-id2" class="Background"/>
-   <g id="bo-id2" class="BackgroundObjects"/>
-  </g>
- </g>
- <g class="SlideGroup">
-  <g>
-   <g id="container-id1">
-    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
-     <g class="Page">
-      <g class="com.sun.star.drawing.ClosedBezierShape">
-       <g id="id3">
-        <rect class="BoundingBox" stroke="none" fill="none" x="5078" y="7985" width="1955" height="1479"/>
-        <path fill="rgb(183,127,88)" stroke="none" d="M 6956,8306 L 6932,8354 6879,8361 6918,8399 6909,8451 6956,8426 7003,8451 6994,8399 7032,8361 6979,8354 6956,8306 Z M 6761,7985 L 6747,8013 6716,8019 6738,8041 6733,8071 6761,8057 6789,8071 6783,8041 6806,8019 6775,8013 6761,7985 Z M 6888,8118 L 6870,8154 6831,8159 6859,8187 6852,8226 6888,8208 6923,8226 6916,8187 6944,8159 6905,8154 6888,8118 Z M 5130,8354 L 5078,8361 5116,8399 5107,8451 5154,8426 5201,8451 5192,8399 5230,8361 5178,8354 5154,8306 5130,8354 Z M 5335,8013 L 5304,8019 5326,8041 5321,8071 5349,8057 5377,8071 5371,8041 5394,8019 5363,8013 5349,7985 5335,8013 Z M 5205,8154 L 5165,8159 5194,8187 5187,8226 5222,8208 5257,8226 5251,8187 5279,8159 5240,8154 5222,8118 5205,8154 Z M 5627,8502 L 5791,8502 5791,8442 5627,8442 5627,8502 Z M 6486,8502 L 6486,8442 6321,8442 6321,8502 6486,8502 Z M 6578,8194 L 5535,8194 5535,8255 6578,8255 6578,8194 Z M 6486,8318 L 5627,8318 5627,8379 6486,8379 6486,8318 Z M 6093,9284 L 6093,8444 6033,8444 6033,9284 6093,9284 Z M 6989,8532 C 6989,8745 6914,8954 6780,9119 6647,9282 6460,9397 6256,9441 6235,9446 6214,9450 6194,9453 6149,9459 6102,9463 6056,9463 6010,9463 5964,9459 5919,9453 5898,9450 5877,9446 5856,9441 5652,9397 5467,9282 5334,9119 5199,8954 5125,8745 5125,8532 L 5176,8532 C 5176,8940 5464,9300 5862,9390 L 5862,8444 5922,8444 5922,9401 C 5924,9402 5925,9402 5926,9402 6012,9415 6101,9415 6186,9402 6188,9402 6189,9402 6190,9401 L 6190,8444 6251,8444 6251,9390 C 6649,9300 6937,8940 6937,8532 L 6989,8532 Z"/>
-       </g>
-      </g>
-     </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <!-- 1729 Chambers Law Firm Logo - Scales of Justice -->
+  <g transform="translate(100, 60)" fill="#b77f58">
+    <!-- Left scale pan -->
+    <polygon points="-85,-5 -70,-5 -70,5 -85,5" />
+    <polygon points="-90,5 -65,5 -65,15 -90,15" />
+    
+    <!-- Right scale pan -->
+    <polygon points="70,-5 85,-5 85,5 70,5" />
+    <polygon points="65,5 90,5 90,15 65,15" />
+    
+    <!-- Scale beam -->
+    <rect x="-90" y="-3" width="180" height="6" />
+    
+    <!-- Central support -->
+    <rect x="-3" y="-3" width="6" height="62" />
+    
+    <!-- Base -->
+    <circle cx="0" cy="55" r="40" fill="none" stroke="#b77f58" stroke-width="8" />
+    
+    <!-- Decorative stars/points -->
+    <g fill="#b77f58">
+      <!-- Top stars -->
+      <polygon points="-60,-45 -55,-35 -45,-40 -55,-30 -50,-20 -60,-30 -70,-20 -65,-30 -75,-40 -65,-35" transform="scale(0.3)" />
+      <polygon points="45,-40 50,-30 60,-35 50,-25 55,-15 45,-25 35,-15 40,-25 30,-35 40,-30" transform="scale(0.3)" />
+      <polygon points="-15,-50 -10,-40 0,-45 -10,-35 -5,-25 -15,-35 -25,-25 -20,-35 -30,-45 -20,-40" transform="scale(0.3)" />
+      
+      <!-- Side stars -->
+      <polygon points="-95,20 -90,30 -80,25 -90,35 -85,45 -95,35 -105,45 -100,35 -110,25 -100,30" transform="scale(0.25)" />
+      <polygon points="80,25 85,35 95,30 85,40 90,50 80,40 70,50 75,40 65,30 75,35" transform="scale(0.25)" />
     </g>
-   </g>
   </g>
- </g>
 </svg>

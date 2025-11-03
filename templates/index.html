@@ -3,12 +3,12 @@
 {% block title %}Home - Design Genesis{% endblock %}
 
 {% block extra_css %}
-    {# No extra CSS needed here, all bumper CSS will go into main.css #}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
 
 {% block content %}
 
-<section class="py-20 text-center relative" style="background-color: #212121; overflow: hidden;">
+<section class="py-20 text-center relative hero-section">
     <div class="background-effect absolute inset-0 z-0"></div> {# Re-added for the gradient background effect, z-0 #}
     <div id="particles-container" class="absolute inset-0 overflow-hidden z-5"></div> {# Particle effect, z-5 to be above gradient #}
     <div class="container mx-auto px-6 relative z-10"> {# Content, z-10 to be on top of both effects #}
@@ -51,37 +51,37 @@
 <!-- Why Choose Us Section -->
 <section class="py-16 section-white">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-4" style="color: #24324b;">Why Choose <span class="text-accent">1729 Chambers</span>?</h2>
-        <p class="text-lg text-center mb-12 max-w-3xl mx-auto" style="color: #2C3E50;">
+        <h2 class="text-4xl font-bold text-center mb-4 why-choose-heading">Why Choose <span class="text-accent">1729 Chambers</span>?</h2>
+        <p class="text-lg text-center mb-12 max-w-3xl mx-auto why-choose-description">
             With years of experience and a commitment to excellence, we provide unparalleled legal services tailored to your unique needs.
         </p>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+            <div class="text-center feature-card">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon-container">
                     <span class="text-2xl text-white">⚖️</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">Expert Legal Team</h3>
+                <h3 class="text-xl font-semibold mb-2 feature-heading">Expert Legal Team</h3>
                 <p class="text-gray-600">Seasoned attorneys with deep expertise across multiple practice areas.</p>
             </div>
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+            <div class="text-center feature-card">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon-container">
                     <span class="text-2xl text-white">🛡️</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">Proven Track Record</h3>
+                <h3 class="text-xl font-semibold mb-2 feature-heading">Proven Track Record</h3>
                 <p class="text-gray-600">Successful outcomes and satisfied clients across diverse legal matters.</p>
             </div>
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+            <div class="text-center feature-card">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon-container">
                     <span class="text-2xl text-white">🤝</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">Client-Focused Approach</h3>
+                <h3 class="text-xl font-semibold mb-2 feature-heading">Client-Focused Approach</h3>
                 <p class="text-gray-600">Personalized strategies designed around your specific goals and challenges.</p>
             </div>
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #b77f58;">
+            <div class="text-center feature-card">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon-container">
                     <span class="text-2xl text-white">⚡</span>
                 </div>
-                <h3 class="text-xl font-semibold mb-2" style="color: #24324b;">Efficient Solutions</h3>
+                <h3 class="text-xl font-semibold mb-2 feature-heading">Efficient Solutions</h3>
                 <p class="text-gray-600">Timely and cost-effective legal solutions that deliver results.</p>
             </div>
         </div>
@@ -91,11 +91,11 @@
 <!-- Client Testimonials Section -->
 <section class="py-16 section-bg-light">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-white text-center mb-12">What Our <span style="color: #b77f58;">Clients</span> Say</h2>
+        <h2 class="text-4xl font-bold text-white text-center mb-12">What Our <span class="testimonials-heading-accent">Clients</span> Say</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="card p-6">
+            <div class="card p-6 testimonial-card">
                 <div class="mb-4">
-                    <div class="flex text-yellow-400 mb-2">
+                    <div class="flex text-yellow-400 mb-2 star-rating">
                         <span>★★★★★</span>
                     </div>
                     <p class="text-gray-600 italic mb-4">
@@ -107,9 +107,9 @@
                     <p class="text-sm text-gray-500">Tech Startup CEO</p>
                 </div>
             </div>
-            <div class="card p-6">
+            <div class="card p-6 testimonial-card">
                 <div class="mb-4">
-                    <div class="flex text-yellow-400 mb-2">
+                    <div class="flex text-yellow-400 mb-2 star-rating">
                         <span>★★★★★</span>
                     </div>
                     <p class="text-gray-600 italic mb-4">
@@ -121,9 +121,9 @@
                     <p class="text-sm text-gray-500">Manufacturing Executive</p>
                 </div>
             </div>
-            <div class="card p-6">
+            <div class="card p-6 testimonial-card">
                 <div class="mb-4">
-                    <div class="flex text-yellow-400 mb-2">
+                    <div class="flex text-yellow-400 mb-2 star-rating">
                         <span>★★★★★</span>
                     </div>
                     <p class="text-gray-600 italic mb-4">
@@ -140,19 +140,19 @@
 </section>
 
 <!-- Call to Action Section -->
-<section class="py-20 text-center" style="background-color: #212121;">
+<section class="py-20 text-center cta-section">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
         <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation and discover how <span style="color: #b77f58;">1729 Chambers</span> can help protect and advance your interests.
+            Contact us today for a consultation and discover how <span class="cta-brand-accent">1729 Chambers</span> can help protect and advance your interests.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" class="btn-primary inline-block">Schedule Consultation</a>
-            <a href="/about" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+            <a href="/about" class="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-full transition-colors duration-300 cta-secondary-button">
                 Learn More About Us
             </a>
         </div>
-        <div class="mt-12 grid md:grid-cols-3 gap-8 text-white">
+        <div class="mt-12 grid md:grid-cols-3 gap-8 text-white contact-info-grid">
             <div>
                 <h3 class="text-lg font-semibold mb-2">📞 Call Us</h3>
                 <p class="text-gray-300">+1 (555) 123-4567</p>
