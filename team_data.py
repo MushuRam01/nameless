@@ -19,6 +19,12 @@ PARTNERS = [
         #"designation": "Managing Partner", 
         "email": "arun.pandiyan@1729chambers.com",
         "image_path": "images/team/arun.png"
+    },
+    {
+        "name": "Siva Raman",
+        #"designation": "Managing Partner", 
+        "email": "siva.raman@1729chambers.com",
+        "image_path": "images/team/siva_raman.jpeg"
     }
 ]
 
@@ -29,6 +35,12 @@ ASSOCIATES = [
         "email": "rupini.raman@1729chambers.com",
         "image_path": "images/team/rupini.png"
     },
+    {
+        "name": "R.V.Senthilkumar",
+        "designation": "Associate Counsel",
+        "email": "senthil.kumar@1729chambers.com",
+        "image_path": "images/team/senthilkumar.jpeg"
+    }
     
 ]
 
