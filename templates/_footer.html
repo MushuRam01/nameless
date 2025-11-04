@@ -2,8 +2,9 @@
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
         {# Company Logo/Name Section #}
         <div class="mb-6 md:mb-0">
-            <a href="/" class="text-3xl font-extrabold tracking-tight block">
-                <span class="text-[#b77f58]">1729 </span>Chambers
+            <a href="/" class="flex items-center space-x-3 text-3xl font-extrabold tracking-tight">
+                <img src="{{ url_for('static', filename='images/logo-cropped.svg') }}" alt="1729 Chambers Logo" class="h-10 w-auto">
+                <span><span class="text-[#b77f58]">1729 </span>Chambers</span>
             </a>
             <p class="text-gray-400 text-sm mt-2">
                 We see what you dont.
