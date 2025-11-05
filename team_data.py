@@ -9,12 +9,6 @@ PARTNERS = [
         "image_path": "images/team/chaitanya.jpg"
     },
     {
-        "name": "Paranthaman Subramaniam",
-        #"designation": "Managing Partner", 
-        "email": "paranthaman.subramaniam@1729chambers.com",
-        "image_path": "images/team/paranthnam.jpg"
-    },
-    {
         "name": "Arun Pandiyan",
         #"designation": "Managing Partner", 
         "email": "arun.pandiyan@1729chambers.com",
@@ -24,7 +18,13 @@ PARTNERS = [
         "name": "Siva Raman",
         #"designation": "Managing Partner", 
         "email": "siva.raman@1729chambers.com",
-        "image_path": "images/team/siva_raman.jpeg"
+        "image_path": "images/team/siva.png"
+    },
+    {
+        "name": "Paranthaman Subramaniam",
+        #"designation": "Managing Partner", 
+        "email": "paranthaman.subramaniam@1729chambers.com",
+        "image_path": "images/team/paranthnam.jpg"
     }
 ]
 
