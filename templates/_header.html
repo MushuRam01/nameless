@@ -4,15 +4,32 @@
             <img src="{{ url_for('static', filename='images/logo-cropped.svg') }}" alt="1729 Chambers Logo" class="h-10 w-auto">
             <span><span class="text-[#b77f58]">1729 </span>Chambers</span>
         </a>
-        <div class="space-x-6">
-            <!--
-            <a href="/" class="nav-link text-lg font-medium">Home</a>
-            -->
-            
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-6">
             <a href="/about" class="nav-link text-lg font-medium">About</a>
             <a href="/team" class="nav-link text-lg font-medium">Team</a>
             <a href="/portfolio" class="nav-link text-lg font-medium">Portfolio</a>
             <a href="/contact" class="nav-link text-lg font-medium">Contact</a>
         </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5 mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 hamburger-line-1"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 hamburger-line-2"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300 hamburger-line-3"></span>
+        </button>
     </nav>
+    
+    <!-- Mobile Navigation Dropdown -->
+    <div class="md:hidden mobile-menu hidden bg-slate-800 border-t border-slate-600">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="/about" class="nav-link text-lg font-medium py-2 border-b border-slate-600">About</a>
+                <a href="/team" class="nav-link text-lg font-medium py-2 border-b border-slate-600">Team</a>
+                <a href="/portfolio" class="nav-link text-lg font-medium py-2 border-b border-slate-600">Portfolio</a>
+                <a href="/contact" class="nav-link text-lg font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </div>
 </header>
