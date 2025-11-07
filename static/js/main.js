@@ -3,6 +3,9 @@
 // ==============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Legal Disclaimer Popup Functionality
+    initLegalDisclaimer();
+    
     // Mobile Menu Toggle Functionality
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -51,6 +54,76 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// ==============================================
+// LEGAL DISCLAIMER POPUP FUNCTIONALITY
+// ==============================================
+
+function initLegalDisclaimer() {
+    const disclaimerPopup = document.getElementById('legalDisclaimer');
+    const agreeBtn = document.getElementById('agreeBtn');
+    const disagreeBtn = document.getElementById('disagreeBtn');
+    
+    // Check if user has already accepted the disclaimer
+    const hasAcceptedDisclaimer = localStorage.getItem('1729chambers_disclaimer_accepted');
+    
+    if (!hasAcceptedDisclaimer) {
+        // Show the popup after a brief delay
+        setTimeout(() => {
+            disclaimerPopup.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }, 500);
+    }
+    
+    // Handle Agree button
+    if (agreeBtn) {
+        agreeBtn.addEventListener('click', function() {
+            // Store acceptance in localStorage
+            localStorage.setItem('1729chambers_disclaimer_accepted', 'true');
+            localStorage.setItem('1729chambers_disclaimer_date', new Date().toISOString());
+            
+            // Hide the popup
+            disclaimerPopup.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Re-enable background scrolling
+            
+            // Optional: Track analytics event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'legal_disclaimer_accepted', {
+                    'event_category': 'legal',
+                    'event_label': 'disclaimer_popup'
+                });
+            }
+        });
+    }
+    
+    // Handle Disagree button
+    if (disagreeBtn) {
+        disagreeBtn.addEventListener('click', function() {
+            // Redirect to a different page or show a message
+            alert('You must agree to the terms to access this website.');
+            
+            // Optional: Redirect to external site or show alternative content
+            // window.location.href = 'https://www.google.com';
+            
+            // For now, just keep the popup open
+        });
+    }
+    
+    // Prevent closing popup by clicking outside (force user decision)
+    disclaimerPopup.addEventListener('click', function(event) {
+        if (event.target === disclaimerPopup) {
+            // Don't close on backdrop click - force user to make a decision
+            return false;
+        }
+    });
+}
+
+// Function to reset disclaimer (for testing purposes)
+function resetDisclaimer() {
+    localStorage.removeItem('1729chambers_disclaimer_accepted');
+    localStorage.removeItem('1729chambers_disclaimer_date');
+    location.reload();
+}
 
 // ==============================================
 // UTILITY FUNCTIONS

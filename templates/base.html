@@ -10,6 +10,69 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body class="flex flex-col min-h-screen">
+    <!-- Legal Disclaimer Popup -->
+    <div id="legalDisclaimer" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-4xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Legal Disclaimer</h2>
+                    <p class="text-gray-600">Please read and acknowledge the following terms before accessing our website.</p>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 text-sm leading-relaxed mb-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>There has been no advertisement, personal communication, solicitation, invitation or inducement of any sort whatsoever from the Firm or any of its members to solicit any work or advertise through this website</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>The purpose of this website is to provide the user with information about the Firm, its practice areas, its advocates and solicitors;</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>The user wishes to gain more information about the Firm for his/her own information and personal/professional use; and</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>The information about the Firm is provided to the user only on his/her specific request and any information obtained or materials downloaded from this website are completely at the user's volition and any transmission, receipt or use of this website would not create any lawyer-client relationship.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>This website is not intended to be a source of advertising or solicitation and the contents hereof should not be construed as legal advice in any manner whatsoever.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>The Firm is not liable for any consequence of any action taken by the user relying on material/information provided under this website. In cases where the user requires any assistance, he/she must seek independent legal advice.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>The content of this website is Intellectual Property of the Firm.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-center">
+                            Please read and accept our website's 
+                            <a href="#" class="text-blue-600 hover:text-blue-800 underline">Terms of Use</a> 
+                            and our 
+                            <a href="#" class="text-blue-600 hover:text-blue-800 underline">Privacy Policy</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="agreeBtn" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        AGREE
+                    </button>
+                    <button id="disagreeBtn" class="px-8 py-3 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors duration-300">
+                        DISAGREE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% include '_header.html' %} {# Include the header partial here #}
 
     <main class="flex-grow">
